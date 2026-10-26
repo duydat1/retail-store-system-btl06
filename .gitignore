@@ -1,6 +1,6 @@
 // những file có đuôi này sẽ bị bỏ qua khi commit lên github 
 
-// *.docx
+*.docx
 .vscode 
 // *.txt
 // *.pdf
