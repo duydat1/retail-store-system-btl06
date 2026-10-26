@@ -3,3 +3,9 @@
 *.docx
 .vscode 
 *.txt
+*.pdf
+*.exe
+*.out
+cpp/output/
+Document/
+ThuMucDuLieu/
