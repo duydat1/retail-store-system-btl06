@@ -21,6 +21,9 @@ class NhanVienBanHang : virtual public Nguoi{
 
         double tinhLuong() const ;
 
+        void nhapnvbh() ; 
+        void xuatnvbh() const ;
+
 };
 
 

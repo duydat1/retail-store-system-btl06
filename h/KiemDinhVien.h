@@ -24,6 +24,8 @@ class KiemDinhVien:virtual public Nguoi{
 
         std::string danhGiaKinhNghiem() const ;    
 
+        void nhapkdv() ; 
+        void xuatkdv() const ; 
 };
 
 

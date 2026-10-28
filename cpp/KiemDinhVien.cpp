@@ -64,7 +64,7 @@ void KiemDinhVien::xuat() const{
         << " | Hoc vi : " << hocVi
         << " | Don vi cong tac : " << donViCongTac
         << " | Luong co ban : " << luongCoBan
-        << " | Luong duoc nhan : " << tinhLuong();
+        << " | Luong duoc nhan : " << tinhLuong() << endl;
 }
 
 // Nạp chồng toán tử >>
@@ -88,6 +88,43 @@ string KiemDinhVien::danhGiaKinhNghiem() const{
     if(soNamKinhNghiem <= 5 ) return "Co Kinh Nghiem";
     return "Giau Kinh Nghiem";
 }
+
+//Hàm nhập riêng 
+void KiemDinhVien::nhapkdv(){
+    cout << "Nhap ma kiem dinh vien : " ; getline(cin>>ws , maKiemDinhVien);
+    cout << "Nhap chuyen mon : " ; getline(cin,chuyenMon);
+
+    do{
+        cout << "Nhap so nam kinh nghiem : " ; cin >> soNamKinhNghiem;
+        if(soNamKinhNghiem < 0 ) cout << "Loi! So nam kinh nghiem phai > 0 . Nhap lai!\n";
+    }while(soNamKinhNghiem < 0);
+
+    do{
+        cout << "Nhap he so luong : " ; cin >> heSoLuong ; 
+        if(heSoLuong <= 0 ) cout << "Loi! He so luong phai > 0 . Nhap lai!\n";
+    }while(heSoLuong <= 0 );
+    cin.ignore();
+    cout << "Nhap hoc vi : " ; getline(cin,hocVi);
+    cout << "Nhap don vi cong tac : " ; getline(cin,donViCongTac) ; 
+    
+    do{
+        cout << "Nhap luong co ban : " ; cin >> luongCoBan;
+        if(luongCoBan <= 0 ) cout << "Loi! So nam kinh nghiem phai >0 . Nhap lai!\n";
+    }while(luongCoBan <= 0 );
+}
+
+//Hàm xuất riêng 
+void KiemDinhVien::xuatkdv() const{
+    cout << " | Ma kiem dinh vien : " << maKiemDinhVien
+        << " | Chuyen mon : " << chuyenMon
+        << " | So nam kinh nghiem : " << soNamKinhNghiem
+        << " | He so luong : " << heSoLuong  
+        << " | Hoc vi : " << hocVi
+        << " | Don vi cong tac : " << donViCongTac
+        << " | Luong co ban : " << luongCoBan
+        << " | Luong duoc nhan : " << tinhLuong() ;
+}
+
 
 
 
