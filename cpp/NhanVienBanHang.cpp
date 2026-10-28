@@ -71,7 +71,31 @@ double NhanVienBanHang::tinhLuong() const {
     return this->luongCoBan * this->heSoLuong;
 }
 
+//Hàm nhập riêng 
+void NhanVienBanHang::nhapnvbh(){
+    cout << "Nhap ma nhan vien : " ; getline(cin>>ws , maNhanVien);
+    cout << "Nhap chuc vu : " ; getline(cin , chucVu);
+    do {
+        cout << "Nhap luong co ban (> 0) : "; cin >> luongCoBan;
+        if (luongCoBan <= 0) cout << "Loi! Luong co ban phai > 0. Nhap lai!\n";
+    } while (luongCoBan <= 0);
+    do {
+        cout << "Nhap he so luong (> 0) : ";
+        cin >> heSoLuong;
+        if (heSoLuong <= 0) cout << "Loi! He so luong phai > 0. Nhap lai!\n";
+    } while (heSoLuong <= 0);
+    cout << "Nhap phong ban : " ; getline(cin>>ws , phongBan);
+}
 
+//Hàm xuất riêng
+void NhanVienBanHang::xuatnvbh() const{
+    cout << " | Ma nhan vien : " << maNhanVien 
+        << " | Chuc vu : " << chucVu 
+        << " | Luong co ban : " << luongCoBan 
+        << " | He so luong : " << heSoLuong 
+        << " | Phong ban : " << phongBan 
+        << " | Tien luong : " << tinhLuong() ; 
+}
 
 
 
