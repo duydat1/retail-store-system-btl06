@@ -2,7 +2,7 @@
 #include "Nguoi.h"
 
 class NhanVienBanHang : virtual public Nguoi{
-    protected : 
+    private : 
         std :: string maNhanVien , chucVu , phongBan ; 
         double luongCoBan , heSoLuong ; 
     public : 
