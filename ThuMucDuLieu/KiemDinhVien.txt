@@ -1,0 +1,12 @@
+
+
+KDV001|Nguyen Van An|15/05/1988|an.nguyen@gmail.com|KDV01|Thiet bi dien|5|2.5|Thac si|Trung tam Kiem dinh 1|10000000
+KDV002|Tran Thi Binh|20/08/1992|binh.tran@gmail.com|KDV02|Hang gia dung|3|2.1|Ky su|Trung tam Kiem dinh 2|8500000
+KDV003|Le Hoang Cuong|10/12/1985|cuong.le@gmail.com|KDV03|Thuc pham|8|3.2|Tien si|Cuc Quan ly Chat luong|12000000
+KDV004|Pham Minh Dung|05/03/1995|dung.pham@gmail.com|KDV04|Hoa my pham|2|1.8|Cu nhan|Trung tam Kiem dinh 1|7000000
+KDV005|Hoang Thi Giang|25/09/1990|giang.hoang@gmail.com|KDV05|Dien tu vien thong|6|2.8|Thac si|Vien Nghien cuu va Kiem dinh|10500000
+
+
+
+
+

@@ -44,13 +44,12 @@ void KiemDinhVien::nhap(){
         cout << "Nhap he so luong : " ; cin >> heSoLuong ; 
         if(heSoLuong <= 0 ) cout << "Loi! He so luong phai > 0 . Nhap lai!\n";
     }while(heSoLuong <= 0 );
-    cin.ignore();
-    cout << "Nhap hoc vi : " ; getline(cin,hocVi);
+    cout << "Nhap hoc vi : " ; getline(cin>>ws,hocVi);
     cout << "Nhap don vi cong tac : " ; getline(cin,donViCongTac) ; 
     
     do{
         cout << "Nhap luong co ban : " ; cin >> luongCoBan;
-        if(luongCoBan <= 0 ) cout << "Loi! So nam kinh nghiem phai >0 . Nhap lai!\n";
+        if(luongCoBan <= 0 ) cout << "Loi! Luong co ban phai >0 . Nhap lai!\n";
     }while(luongCoBan <= 0 );
 }
 
@@ -103,13 +102,12 @@ void KiemDinhVien::nhapkdv(){
         cout << "Nhap he so luong : " ; cin >> heSoLuong ; 
         if(heSoLuong <= 0 ) cout << "Loi! He so luong phai > 0 . Nhap lai!\n";
     }while(heSoLuong <= 0 );
-    cin.ignore();
-    cout << "Nhap hoc vi : " ; getline(cin,hocVi);
+    cout << "Nhap hoc vi : " ; getline(cin>>ws,hocVi);
     cout << "Nhap don vi cong tac : " ; getline(cin,donViCongTac) ; 
     
     do{
         cout << "Nhap luong co ban : " ; cin >> luongCoBan;
-        if(luongCoBan <= 0 ) cout << "Loi! So nam kinh nghiem phai >0 . Nhap lai!\n";
+        if(luongCoBan <= 0 ) cout << "Loi! Luong co ban phai >0 . Nhap lai!\n";
     }while(luongCoBan <= 0 );
 }
 
