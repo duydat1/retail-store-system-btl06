@@ -25,7 +25,7 @@ class HangCaoCap: public MatHang{
 
         std::string kiemTraDieuKien() const ; 
 
-
+        void docTuFile(std::ifstream& in) override;
 };
 
 

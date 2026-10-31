@@ -26,4 +26,10 @@ public:
 
     // Hàm thuần ảo
     virtual double tinhChiPhi() const = 0;
+
+    virtual void docTuFile(std::ifstream& in) = 0;
+    
+    std::string getMaHang() const;
+
+    
 };

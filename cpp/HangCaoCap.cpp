@@ -64,4 +64,20 @@ string HangCaoCap::kiemTraDieuKien() const{
     return "Khong bao hanh";
 }
 
+void HangCaoCap::docTuFile(ifstream& in) {
+    // 1. Đọc 5 thuộc tính chung của MatHang
+    in >> ws; getline(in, maHang, '|');
+    in >> ws; getline(in, tenHang, '|');
+    in >> soLuongDongGoi;
+    in.ignore(1, '|'); // Bỏ qua dấu ngăn cách
+    in >> donGiaCoBan;
+    in.ignore(1, '|');
+    in >> ws; getline(in, maKiemDinhVien, '|');
 
+    // 2. Đọc 3 thuộc tính riêng của HangCaoCap
+    in >> ws; getline(in, yeuCauBaoQuan, '|');
+    in >> heSoCaoCap;
+    in.ignore(1, '|');
+    in >> coBaoHanh;
+    in.ignore(); // Bỏ qua ký tự xuống dòng
+}

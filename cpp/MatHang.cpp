@@ -89,3 +89,7 @@ ostream& operator<<(ostream& os, const MatHang& mh) {
     mh.xuat();
     return os;
 }
+
+string MatHang::getMaHang() const {
+    return this->maHang;
+}

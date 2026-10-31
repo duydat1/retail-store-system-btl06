@@ -51,6 +51,20 @@ double HangPhoThong::tinhChiPhi() const{
     return donGiaCoBan*heSoGia ; 
 }
 
+void HangPhoThong::docTuFile(ifstream& in) {
+    // 1. Đọc 5 thuộc tính chung của MatHang
+    in >> ws; getline(in, maHang, '|');
+    in >> ws; getline(in, tenHang, '|');
+    in >> soLuongDongGoi;
+    in.ignore(1, '|'); // Bỏ qua dấu ngăn cách
+    in >> donGiaCoBan;
+    in.ignore(1, '|');
+    in >> ws; getline(in, maKiemDinhVien, '|');
 
+    // 2. Đọc 2 thuộc tính riêng của HangPhoThong
+    in >> ws; getline(in, nhomHang, '|');
+    in >> heSoGia;
+    in.ignore(); // Bỏ qua ký tự xuống dòng
+}
 
 
