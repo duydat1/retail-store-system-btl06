@@ -22,7 +22,7 @@ class HangPhoThong:public MatHang{
 
         double tinhChiPhi() const override ; 
 
-
+        void docTuFile(std::ifstream& in) override;
 
 
 };

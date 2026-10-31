@@ -1,0 +1,6 @@
+
+
+
+1 | MH01|Ao thoi trang|10|150000|KDV01|Thoi trang|1.2
+2 | MH02|Laptop Dell|1|15000000|KDV02|Bao quan kho|1.5|1
+1 | MH03|Giay thieu nhi|5|200000|KDV01|Giay dep|1.1
