@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include "../h/NhanVienBanHang.h"
+
+#include "./NhanVienBanHang.h"
 using namespace std ; 
 
 
@@ -15,7 +15,7 @@ NhanVienBanHang::NhanVienBanHang() : Nguoi(){
 //hàm tạo có tham số 
 NhanVienBanHang::NhanVienBanHang(string maNguoi, string hoTen, string ngaySinh, string email,
                                 string maNhanVien, string chucVu,double luongCoBan, double heSoLuong, string phongBan )
-    : Nguoi(maNguoi, hoTen, ngaySinh, email) {
+    :Nguoi(maNguoi, hoTen, ngaySinh, email){
         this->maNhanVien = maNhanVien;
         this->chucVu = chucVu;
         this->luongCoBan = luongCoBan; 
@@ -31,22 +31,22 @@ void NhanVienBanHang::nhap(){
     Nguoi::nhap() ; 
     cout << "Nhap ma nhan vien : " ; getline(cin>>ws , maNhanVien);
     cout << "Nhap chuc vu : " ; getline(cin , chucVu);
-    do {
+    do{
         cout << "Nhap luong co ban (> 0) : "; cin >> luongCoBan;
         if (luongCoBan <= 0) cout << "Loi! Luong co ban phai > 0. Nhap lai!\n";
-    } while (luongCoBan <= 0);
-    do {
+    }while (luongCoBan <= 0);
+    do{
         cout << "Nhap he so luong (> 0) : ";
         cin >> heSoLuong;
         if (heSoLuong <= 0) cout << "Loi! He so luong phai > 0. Nhap lai!\n";
-    } while (heSoLuong <= 0);
+    }while (heSoLuong <= 0);
     cout << "Nhap phong ban : " ; getline(cin>>ws , phongBan);
 }
 
 //Hàm xuất 
-void NhanVienBanHang::xuat() const {
+void NhanVienBanHang::xuat() const{
     Nguoi::xuat() ; 
-    cout << "Ma nhan vien : " << maNhanVien 
+    cout<< "Ma nhan vien : " << maNhanVien 
         << " | Chuc vu : " << chucVu 
         << " | Luong co ban : " << luongCoBan 
         << " | He so luong : " << heSoLuong 
@@ -67,7 +67,7 @@ ostream& operator<<(ostream& os , const NhanVienBanHang& nvbh){
 }
 
 //Hàm tính tiền lương 
-double NhanVienBanHang::tinhLuong() const {
+double NhanVienBanHang::tinhLuong() const{
     return this->luongCoBan * this->heSoLuong;
 }
 
@@ -89,7 +89,7 @@ void NhanVienBanHang::nhapnvbh(){
 
 //Hàm xuất riêng
 void NhanVienBanHang::xuatnvbh() const{
-    cout << " | Ma nhan vien : " << maNhanVien 
+    cout<< " | Ma nhan vien : " << maNhanVien 
         << " | Chuc vu : " << chucVu 
         << " | Luong co ban : " << luongCoBan 
         << " | He so luong : " << heSoLuong 

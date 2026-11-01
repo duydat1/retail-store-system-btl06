@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include "../h/KiemDinhVien.h"
+
+#include "./KiemDinhVien.h"
 using namespace std ; 
 
 //Hàm mặc định 
@@ -67,19 +67,19 @@ void KiemDinhVien::xuat() const{
 }
 
 // Nạp chồng toán tử >>
-istream& operator>>(istream& is, KiemDinhVien& kdv) {
+istream& operator>>(istream& is, KiemDinhVien& kdv){
     kdv.nhap();
     return is;
 }
 
 // Nạp chồng toán tử <<
-ostream& operator<<(ostream& os, const KiemDinhVien& kdv) {
+ostream& operator<<(ostream& os, const KiemDinhVien& kdv){
     kdv.xuat();
     return os;
 }
 
-double KiemDinhVien::tinhLuong() const {
-    return luongCoBan*heSoLuong + soNamKinhNghiem*100000 ; 
+double KiemDinhVien::tinhLuong() const{
+    return this->luongCoBan*this->heSoLuong + this->soNamKinhNghiem*100000 ; 
 }
 
 string KiemDinhVien::danhGiaKinhNghiem() const{
@@ -113,7 +113,7 @@ void KiemDinhVien::nhapkdv(){
 
 //Hàm xuất riêng 
 void KiemDinhVien::xuatkdv() const{
-    cout << " | Ma kiem dinh vien : " << maKiemDinhVien
+    cout<< " | Ma kiem dinh vien : " << maKiemDinhVien
         << " | Chuyen mon : " << chuyenMon
         << " | So nam kinh nghiem : " << soNamKinhNghiem
         << " | He so luong : " << heSoLuong  

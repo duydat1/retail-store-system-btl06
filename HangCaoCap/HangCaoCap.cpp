@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include "../h/HangCaoCap.h"
+
+#include "./HangCaoCap.h"
 using namespace std ;
 
 //Hàm tạo ko tham số 
@@ -55,7 +55,7 @@ ostream& operator<<(ostream& os , const HangCaoCap& hcc){
 
 //Hàm tính chi phí 
 double HangCaoCap::tinhChiPhi() const{
-    return donGiaCoBan*heSoCaoCap ; 
+    return this->donGiaCoBan*this->heSoCaoCap ; 
 }
 
 //Hàm kiểm tra điều kiện 

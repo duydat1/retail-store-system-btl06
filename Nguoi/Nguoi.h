@@ -1,5 +1,6 @@
 #pragma once
 #include<bits/stdc++.h>
+
 class Nguoi {
     protected:
         std::string maNguoi;
