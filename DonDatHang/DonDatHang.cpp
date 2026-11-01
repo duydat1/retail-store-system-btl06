@@ -1,17 +1,14 @@
-#include<bits/stdc++.h>
-#include "../h/DonDatHang.h"
-#include "../h/HangPhoThong.h"
-#include "../h/HangCaoCap.h"
+
+#include "./DonDatHang.h"
 using namespace std ; 
 
-
 // Kiểm tra mã khách hàng tồn tại trong KhachHang.txt
-bool DonDatHang::kiemTraMaKhachHang(const string& maKH) {
+bool DonDatHang::kiemTraMaKhachHang(const string& maKH){
     ifstream file("ThuMucDuLieu/KhachHang.txt");
     if(!file.is_open() || maKH.empty()) return false;
 
     string line;
-    while(getline(file, line)) {
+    while(getline(file, line)){
         size_t pos = line.find('|');
         if(pos == string::npos) continue;
 
@@ -22,17 +19,17 @@ bool DonDatHang::kiemTraMaKhachHang(const string& maKH) {
 }
 
 // Kiểm tra mã hàng tồn tại trong MatHang.txt sau đó tính chi phí 
-bool DonDatHang::kiemTraMaHangVaLayChiPhi(const string& maH, double &chiPhi) {
+bool DonDatHang::kiemTraMaHangVaLayChiPhi(const string& maH, double &chiPhi){
     ifstream file("ThuMucDuLieu/MatHang.txt");
     if(!file.is_open() || maH.empty()) return false;
 
     int loaiHang;
     // Gắn 1 (Phổ thông) hoặc 2 (Cao cấp) ở đầu mỗi dòng
-    while(file >> loaiHang) {
+    while(file >> loaiHang){
         MatHang* mh = nullptr;
         if(loaiHang == 1) mh = new HangPhoThong();
         else if(loaiHang == 2) mh = new HangCaoCap();
-        else {
+        else{
             // Không hợp lệ thì bỏ qua dòng này luôn 
             string temp; getline(file, temp);
             continue;
@@ -40,7 +37,7 @@ bool DonDatHang::kiemTraMaHangVaLayChiPhi(const string& maH, double &chiPhi) {
         // Gọi hàm ảo đọc nốt phần dữ liệu còn lại của dòng (Bạn cần viết hàm này ở 2 class con)
         mh->docTuFile(file);
 
-        if(mh->getMaHang() == maH) {
+        if(mh->getMaHang() == maH){
             chiPhi = mh->tinhChiPhi(); // Tính chi phí đa hình
             delete mh;
             file.close();
@@ -53,7 +50,7 @@ bool DonDatHang::kiemTraMaHangVaLayChiPhi(const string& maH, double &chiPhi) {
 }
 
 //Kiểm tra trùng lặp mã giao hàng trong DonDatHang.txt
-bool DonDatHang::kiemTraTrungGiaoDich(const string& maGD) {
+bool DonDatHang::kiemTraTrungGiaoDich(const string& maGD){
     ifstream file("ThuMucDuLieu/DonDatHang.txt");
     if(!file.is_open() || maGD.empty()) return false;
 
@@ -69,7 +66,7 @@ bool DonDatHang::kiemTraTrungGiaoDich(const string& maGD) {
 }
 
 //Ngày đăng ký 
-string DonDatHang::time_Dangky() {
+string DonDatHang::time_Dangky(){
     time_t now = time(nullptr);
     tm* ltm = localtime(&now);
 
@@ -104,7 +101,7 @@ DonDatHang::DonDatHang(std::string maGiaoDich , std::string maKhachHang , std::s
 
 DonDatHang::~DonDatHang(){}
 
-void DonDatHang::nhap() {
+void DonDatHang::nhap(){
     cout << "Nhap ma giao dich: "; getline(cin >> ws, maGiaoDich);
     cout << "Nhap ma khach hang: "; getline(cin, maKhachHang);
     cout << "Nhap ma hang: "; getline(cin, maHang);
@@ -122,7 +119,7 @@ bool DonDatHang::taoGiaoDich(){
         if(!check) cout << "Loi! Ma khach hang khong ton tai. Nhap lai!\n";
     }while(!check);
 
-    do {
+    do{
         cout << "2. Nhap ma hang : " ; getline(cin>>ws , maHang);
         check = kiemTraMaHangVaLayChiPhi(maHang, this->soTienDangKy);
         if(!check) cout << "Loi! Ma hang khong ton tai. Nhap lai!\n";
@@ -146,8 +143,8 @@ bool DonDatHang::taoGiaoDich(){
     return true;
 }
 
-bool DonDatHang::huyGiaoDich() {
-    if (trangThai == "Da huy") {
+bool DonDatHang::huyGiaoDich(){
+    if(trangThai == "Da huy"){
         cout << "Loi! Don hang nay da bi huy tu truoc do!\n";
         return false;
     }
@@ -157,21 +154,20 @@ bool DonDatHang::huyGiaoDich() {
     return true;
 }
 
-void DonDatHang::thanhToan() {
-    if (daThanhToan) {
+void DonDatHang::thanhToan(){
+    if(daThanhToan){
         cout << "Thong bao: Don hang da duoc thanh toan truoc do, khong ghi lap!\n";
-    } else {
+    } else{
         daThanhToan = true;
         cout << "=> Thanh toan thanh cong so tien: " << fixed << setprecision(0) << soTienDangKy << " VND\n";
     }
 }
 
-bool DonDatHang::kiemTraThanhToan() const {
-    return daThanhToan; // Trả true nếu đã thanh toán 
+bool DonDatHang::kiemTraThanhToan() const{
+    return this->daThanhToan; // Trả true nếu đã thanh toán 
 }
 
-void DonDatHang::xuat() const {
-    cout << "\n--- THONG TIN DON DAT HANG ---\n";
+void DonDatHang::xuat() const{
     cout << "Ma GD: " << maGiaoDich << endl;
     cout << "Ma KH: " << maKhachHang << endl;
     cout << "Ma Hang: " << maHang << endl;

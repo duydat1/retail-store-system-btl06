@@ -1,6 +1,7 @@
 #pragma once
-#include "MatHang.h"
 #include<bits/stdc++.h> 
+#include "../MatHang/MatHang.h"
+
 
 class HangCaoCap: public MatHang{
     private:

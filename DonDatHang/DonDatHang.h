@@ -1,7 +1,9 @@
 #pragma once
 #include<bits/stdc++.h>
-#include "./KhachHang.h"
-#include "./MatHang.h"
+#include "../KhachHang/KhachHang.h"
+#include "../MatHang/MatHang.h"
+#include "../HangPhoThong/HangPhoThong.h"
+#include "../HangCaoCap/HangCaoCap.h"
 
 class DonDatHang{
     private:

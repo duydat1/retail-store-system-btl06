@@ -1,14 +1,13 @@
-#include<bits/stdc++.h>
-#include "../h/DanhGiaDonHang.h"
-#include "./KhachHang.cpp"
-#include "./MatHang.cpp"
+
+#include "./DanhGiaDonHang.h"
+using namespace std ; 
 
 bool DanhGiaDonHang::kiemTraMaKhachHang(const string& maKH){
     ifstream file("ThuMucDuLieu/KhachHang.txt");
     if(!file.is_open() || maKH.empty()) return false;
 
     string line;
-    while(getline(file, line)) {
+    while(getline(file, line)){
         size_t pos = line.find('|');
         if(pos == string::npos) continue;
 
@@ -92,7 +91,7 @@ void DanhGiaDonHang::nhap(){
     this->xepLoai = xepLoaiKetQua();
 }
 
-double DanhGiaDonHang::getdiemTongKet() const {
+double DanhGiaDonHang::getdiemTongKet() const{
     return diemTongKet;
 }
 
@@ -100,7 +99,7 @@ double DanhGiaDonHang::tinhDiemTongKet() const{
     return 0.1*this->diemDongGoi + 0.3*this->diemChatLuong + 0.6*this->diemGiaoHang;
 }
 
-string DanhGiaDonHang::xepLoaiKetQua() const {
+string DanhGiaDonHang::xepLoaiKetQua() const{
     double diemTongKet = tinhDiemTongKet() ; 
     if(diemTongKet >= 8.5 ) return "Gioi" ; 
     if(diemTongKet >=7) return "Kha" ; 

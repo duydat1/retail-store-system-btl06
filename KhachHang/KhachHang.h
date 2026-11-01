@@ -1,5 +1,6 @@
 #pragma once
-#include "Nguoi.h"
+#include<bits/stdc++.h>
+#include "../Nguoi/Nguoi.h"
 
 class KhachHang : public Nguoi {
     private:

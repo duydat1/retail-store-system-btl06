@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include "../h/HangPhoThong.h"
+
+#include "./HangPhoThong.h"
 using namespace std ; 
 
 //Hàm ko tham số 
@@ -11,7 +11,7 @@ HangPhoThong::HangPhoThong() : MatHang(){
 // Hàm có tham số 
 HangPhoThong::HangPhoThong(string maHang, string tenHang, int soLuongDongGoi, double donGiaCoBan, string maKiemDinhVien,
                             string nhomHang , double heSoGia
-    ): MatHang(maHang , tenHang , soLuongDongGoi , donGiaCoBan , maKiemDinhVien) {
+    ): MatHang(maHang , tenHang , soLuongDongGoi , donGiaCoBan , maKiemDinhVien){
         this->nhomHang = nhomHang ; 
         this->heSoGia = heSoGia ; 
 }
@@ -48,7 +48,7 @@ ostream& operator<<(ostream& os , const HangPhoThong& hpt){
 
 //Hàm tính chi phí 
 double HangPhoThong::tinhChiPhi() const{
-    return donGiaCoBan*heSoGia ; 
+    return this->donGiaCoBan*this->heSoGia ; 
 }
 
 void HangPhoThong::docTuFile(ifstream& in) {

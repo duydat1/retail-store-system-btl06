@@ -1,9 +1,9 @@
 
-#include "../h/Nguoi.h"
+#include "./Nguoi.h"
 using namespace std;
 
 // Hàm tạo mặc định
-Nguoi::Nguoi() {
+Nguoi::Nguoi(){
     this->maNguoi = "";
     this->hoTen = "";
     this->ngaySinh = "";
@@ -11,7 +11,7 @@ Nguoi::Nguoi() {
 }
 
 // Hàm tạo có tham số
-Nguoi::Nguoi(string maNguoi, string hoTen, string ngaySinh, string email) {
+Nguoi::Nguoi(string maNguoi, string hoTen, string ngaySinh, string email){
     this->maNguoi = maNguoi;
     this->hoTen = hoTen;
     this->ngaySinh = ngaySinh;
@@ -19,10 +19,10 @@ Nguoi::Nguoi(string maNguoi, string hoTen, string ngaySinh, string email) {
 }
 
 // Virtual Destructor
-Nguoi::~Nguoi() {}
+Nguoi::~Nguoi(){}
 
 // Hàm nhập thông tin người
-void Nguoi::nhap() {
+void Nguoi::nhap(){
     cout << "Nhap ma nguoi: "; getline(cin >> ws, maNguoi);
     cout << "Nhap ho ten: "; getline(cin, hoTen);
     cout << "Nhap ngay sinh: "; getline(cin, ngaySinh);
@@ -30,7 +30,7 @@ void Nguoi::nhap() {
 }
 
 // Hàm hiển thị thông tin người
-void Nguoi::xuat() const {
+void Nguoi::xuat() const{
     cout<< " Ma: " << maNguoi 
         << " | Ho ten: " << hoTen 
         << " | Ngay sinh: " << ngaySinh 
@@ -38,13 +38,13 @@ void Nguoi::xuat() const {
 }
 
 // Nạp chồng toán tử >>
-istream& operator>>(istream& is, Nguoi& n) {
+istream& operator>>(istream& is, Nguoi& n){
     n.nhap();
     return is;
 }
 
 // Nạp chồng toán tử <<
-ostream& operator<<(ostream& os, const Nguoi& n) {
+ostream& operator<<(ostream& os, const Nguoi& n){
     n.xuat();
     return os;
 }

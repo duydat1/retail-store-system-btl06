@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-#include "../h/QuanLyCuaHang.h"
+
+#include "./QuanLyCuaHang.h"
 using namespace std ; 
 
 //Hàm mặc định 
@@ -54,19 +54,19 @@ void QuanLyCuaHang::xuat() const{
         << " | He so chuc vu : " << heSoChucVu;
 }
 
-istream& operator>>(istream& is, QuanLyCuaHang& qlch) {
+istream& operator>>(istream& is, QuanLyCuaHang& qlch){
     qlch.nhap();
     return is;
 }
 
-ostream& operator<<(ostream& os, const QuanLyCuaHang& qlch) {
+ostream& operator<<(ostream& os, const QuanLyCuaHang& qlch){
     qlch.xuat();
     return os;
 }
 
 //Hàm tính phụ cấp 
 double QuanLyCuaHang::tinhPhuCap() const{
-    return NhanVienBanHang::tinhLuong() + heSoChucVu*2000000;
+    return NhanVienBanHang::tinhLuong() + this->heSoChucVu*2000000;
 }
 
 //Hàm cập nhật số nhân sự 

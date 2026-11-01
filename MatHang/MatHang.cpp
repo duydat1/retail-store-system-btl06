@@ -1,21 +1,21 @@
-#include<bits/stdc++.h>
-#include "../h/MatHang.h"
+
+#include "./MatHang.h"
 using namespace std;
 
 // Hàm kiểm tra mã kiểm định viên có tồn tại trong file KiemDinhVien.txt không
 bool MatHang::kiemTraMaKDVTonTai(const string& maKDV) {
     ifstream file("ThuMucDuLieu/KiemDinhVien.txt"); 
     
-    if (!file.is_open()) {
+    if (!file.is_open()){
         // Nếu không mở được file thì báo lỗi hoặc tạm cho qua để test
         cout << "[Loi]: Khong mo duoc file ThuMucDuLieu/KiemDinhVien.txt!\n";
         return false; 
     }
 
     string line;
-    while (getline(file, line)) {
+    while (getline(file, line)){
         // Kiểm tra xem dòng đó có chứa mã KDV không
-        if (line.find(maKDV) != string::npos && !maKDV.empty()) {
+        if (line.find(maKDV) != string::npos && !maKDV.empty()){
             file.close();
             return true; // Tìm thấy mã hợp lệ
         }
@@ -25,7 +25,7 @@ bool MatHang::kiemTraMaKDVTonTai(const string& maKDV) {
 }
 
 // Hàm tạo mặc định
-MatHang::MatHang() {
+MatHang::MatHang(){
     this->maHang = "";
     this->tenHang = "";
     this->soLuongDongGoi = 0;
@@ -43,10 +43,10 @@ MatHang::MatHang(string maHang, string tenHang, int soLuongDongGoi, double donGi
 }
 
 // Hàm hủy ảo
-MatHang::~MatHang() {}
+MatHang::~MatHang(){}
 
 // Hàm nhập
-void MatHang::nhap() {
+void MatHang::nhap(){
     cout << "Nhap ma mat hang: "; getline(cin >> ws, maHang);
     cout << "Nhap ten mat hang: "; getline(cin, tenHang);
 
@@ -70,7 +70,7 @@ void MatHang::nhap() {
 }
 
 // Hàm xuất
-void MatHang::xuat() const {
+void MatHang::xuat() const{
     cout << "Ma hang: " << maHang
         << " | Ten hang: " << tenHang
         << " | SL dong goi: " << soLuongDongGoi
@@ -79,17 +79,17 @@ void MatHang::xuat() const {
 }
 
 // Operator >>
-istream& operator>>(istream& is, MatHang& mh) {
+istream& operator>>(istream& is, MatHang& mh){
     mh.nhap();
     return is;
 }
 
 // Operator <<
-ostream& operator<<(ostream& os, const MatHang& mh) {
+ostream& operator<<(ostream& os, const MatHang& mh){
     mh.xuat();
     return os;
 }
 
-string MatHang::getMaHang() const {
+string MatHang::getMaHang() const{
     return this->maHang;
 }

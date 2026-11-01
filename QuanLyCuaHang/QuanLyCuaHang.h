@@ -1,6 +1,7 @@
 #pragma once
-#include "NhanVienBanHang.h"
-#include "KiemDinhVien.h"
+#include<bits/stdc++.h>
+#include "../NhanVienBanHang/NhanVienBanHang.h"
+#include "../KiemDinhVien/KiemDinhVien.h"
 
 class QuanLyCuaHang : public NhanVienBanHang, public KiemDinhVien {
     private:
