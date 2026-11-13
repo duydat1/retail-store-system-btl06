@@ -27,18 +27,15 @@ class DanhGiaDonHang{
         friend std::istream& operator>>(std::istream& is , DanhGiaDonHang& dgdh);
         friend std::ostream& operator<<(std::ostream& os ,const DanhGiaDonHang& dgdh);
 
-        double getdiemTongKet() const ;
+        // Các hàm get và set 
+        string getmaKhachHang() const { return maKhachHang; }
+        double getdiemTongKet() const { return diemTongKet; }
+}; 
 
 
 
 
 
 
-
-
-
-
-
-};
 
 

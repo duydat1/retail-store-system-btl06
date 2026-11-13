@@ -25,6 +25,13 @@ class Nguoi {
         // Nạp chồng toán tử >> và <<
         friend std::istream& operator>>(std::istream& is, Nguoi& n);
         friend std::ostream& operator<<(std::ostream& os, const Nguoi& n);
+
+        // Các hàm get và set 
+        string getmaNguoi() const { return maNguoi; }
+        string gethoTen() const { return hoTen; }
+        string getngaySinh() const { return ngaySinh; }
+        string getemail() const { return email; }
+
 };
 
 

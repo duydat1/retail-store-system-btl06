@@ -91,10 +91,6 @@ void DanhGiaDonHang::nhap(){
     this->xepLoai = xepLoaiKetQua();
 }
 
-double DanhGiaDonHang::getdiemTongKet() const{
-    return diemTongKet;
-}
-
 double DanhGiaDonHang::tinhDiemTongKet() const{
     return 0.1*this->diemDongGoi + 0.3*this->diemChatLuong + 0.6*this->diemGiaoHang;
 }

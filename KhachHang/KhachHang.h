@@ -23,6 +23,11 @@ class KhachHang : public Nguoi {
 
         friend std::istream& operator>>(std::istream& is, KhachHang& kh);
         friend std::ostream& operator<<(std::ostream& os, const KhachHang& kh);
+
+        // Các hàm get và set 
+        string getmaKhachHang() const { return maKhachHang; }
+        string getsoDienThoai() const { return soDienThoai; }
+        string getdiaChi() const { return diaChi; }
 }; 
 
 
